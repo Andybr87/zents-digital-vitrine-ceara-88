@@ -1,23 +1,43 @@
+
 import { Button } from "@/components/ui/button";
 import { Check, Star, Sparkles } from "lucide-react";
+
 const PricingSection = () => {
-  const plans = [{
-    name: "Essencial",
-    price: 199,
-    features: ["Vitrine Digital", "Atualização por voz", "Suporte WhatsApp"],
-    popular: false
-  }, {
-    name: "Profissional",
-    price: 399,
-    features: ["Tudo do Essencial +", "Mockup automático", "2 usuários simultâneos"],
-    popular: true
-  }, {
-    name: "Premium",
-    price: 799,
-    features: ["Tudo do Profissional +", "Suporte Prioritário", "Personalização Avançada"],
-    popular: false
-  }];
-  return <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+  const plans = [
+    {
+      name: "Essencial",
+      price: 199,
+      features: [
+        "Vitrine Digital",
+        "Atualização por voz",
+        "Suporte WhatsApp"
+      ],
+      popular: false
+    },
+    {
+      name: "Profissional",
+      price: 399,
+      features: [
+        "Tudo do Essencial +",
+        "Mockup automático",
+        "2 usuários simultâneos"
+      ],
+      popular: true
+    },
+    {
+      name: "Premium",
+      price: 799,
+      features: [
+        "Tudo do Profissional +",
+        "Suporte Prioritário",
+        "Personalização Avançada"
+      ],
+      popular: false
+    }
+  ];
+
+  return (
+    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -33,33 +53,52 @@ const PricingSection = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {plans.map((plan, index) => <div key={index} className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${plan.popular ? 'border-zents-orange-500 scale-105' : 'border-gray-100 hover:border-zents-purple-200'}`}>
-                {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            {plans.map((plan, index) => (
+              <div 
+                key={index}
+                className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${
+                  plan.popular 
+                    ? 'border-zents-orange-500 scale-105' 
+                    : 'border-gray-100 hover:border-zents-purple-200'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-zents-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-1">
                       <Star className="w-4 h-4" />
                       Mais Popular
                     </div>
-                  </div>}
+                  </div>
+                )}
                 
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">{plan.name}</h3>
-                  <div className="199">
+                  <div className="text-4xl font-bold text-zents-purple-600 mb-2">
                     R$ {plan.price},00
                   </div>
                   <p className="text-gray-500 text-sm">/mês</p>
                 </div>
                 
                 <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center gap-3">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center gap-3">
                       <Check className="w-5 h-5 text-zents-orange-500 flex-shrink-0" />
                       <span className="text-gray-600">{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
                 
-                <Button className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${plan.popular ? 'bg-zents-orange-500 hover:bg-zents-orange-600 text-white' : 'bg-zents-purple-100 hover:bg-zents-purple-200 text-zents-purple-600'}`}>
+                <Button 
+                  className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
+                    plan.popular
+                      ? 'bg-zents-orange-500 hover:bg-zents-orange-600 text-white'
+                      : 'bg-zents-purple-100 hover:bg-zents-purple-200 text-zents-purple-600'
+                  }`}
+                >
                   Começar agora
                 </Button>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           <div className="bg-gradient-to-r from-zents-purple-50 to-zents-orange-50 rounded-2xl p-8 text-center">
@@ -87,6 +126,8 @@ const PricingSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default PricingSection;
