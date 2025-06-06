@@ -12,13 +12,8 @@ const WhatsAppButton = () => {
         <p className="text-sm text-gray-700 font-medium">
           💬 Fale conosco no WhatsApp!
         </p>
-        <p className="text-xs text-gray-500 flex items-center gap-1">
-          Tire suas dúvidas sobre a{" "}
-          <img 
-            src="/lovable-uploads/30c7b77e-1be0-4a70-8a08-fac8f8e44203.png" 
-            alt="ZENTS"
-            className="inline h-3"
-          />
+        <p className="text-xs text-gray-500">
+          Tire suas dúvidas sobre a ZENTS
         </p>
       </div>
     </div>

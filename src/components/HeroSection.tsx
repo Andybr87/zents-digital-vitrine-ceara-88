@@ -1,21 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight } from "lucide-react";
-
 const HeroSection = () => {
-  return (
-    <section className="pt-20 pb-16 bg-gradient-to-br from-white via-zents-purple-50 to-zents-orange-50">
+  return <section className="pt-20 pb-16 bg-gradient-to-br from-white via-zents-purple-50 to-zents-orange-50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           
+          
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            A{" "}
-            <img 
-              src="/lovable-uploads/30c7b77e-1be0-4a70-8a08-fac8f8e44203.png" 
-              alt="ZENTS"
-              className="inline h-12 md:h-16 mx-2"
-            />{" "}
-            é sua{" "}
+            A ZENTS é sua{" "}
             <span className="bg-gradient-to-r from-zents-purple-600 to-zents-orange-500 bg-clip-text text-transparent">
               secretária digital
             </span>{" "}
@@ -55,8 +47,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
