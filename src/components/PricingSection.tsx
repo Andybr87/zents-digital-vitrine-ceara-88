@@ -42,8 +42,8 @@ const PricingSection = () => {
                   </div>}
                 
                 <div className="text-center mb-6">
-                  <h3 className="B\xE1sico-2xl font-bold text-gray-800 mb-2">{plan.name}</h3>
-                  <div className="199">
+                  <h3 className="text-2xl B\xE1sico text-gray-800 mb-2">{plan.name}</h3>
+                  <div className="text-4xl font-bold text-zents-purple-600 mb-2">
                     R$ {plan.price},00
                   </div>
                   <p className="text-gray-500 text-sm">/mês</p>
