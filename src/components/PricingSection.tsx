@@ -1,20 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Check, Star, Sparkles } from "lucide-react";
+
 const PricingSection = () => {
   const plans = [{
-    name: "Essencial",
-    price: 199,
+    name: "Básico",
+    price: "199,90",
     features: ["Vitrine Digital", "Atualização por voz", "Suporte WhatsApp"],
     popular: false
   }, {
-    name: "Profissional",
-    price: 399,
-    features: ["Tudo do Essencial +", "Mockup automático", "2 usuários simultâneos"],
+    name: "Plus",
+    price: "349,90",
+    features: ["Tudo do Básico +", "Mockup automático", "2 usuários simultâneos"],
     popular: true
   }, {
     name: "Premium",
-    price: 799,
-    features: ["Tudo do Profissional +", "Suporte Prioritário", "Personalização Avançada"],
+    price: "499,90",
+    features: ["Tudo do Plus +", "Suporte Prioritário", "Personalização Avançada"],
     popular: false
   }];
   return <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
@@ -42,9 +43,9 @@ const PricingSection = () => {
                   </div>}
                 
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl B\xE1sico text-gray-800 mb-2">{plan.name}</h3>
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">{plan.name}</h3>
                   <div className="text-4xl font-bold text-zents-purple-600 mb-2">
-                    R$ {plan.price},00
+                    R$ {plan.price}
                   </div>
                   <p className="text-gray-500 text-sm">/mês</p>
                 </div>
@@ -89,4 +90,5 @@ const PricingSection = () => {
       </div>
     </section>;
 };
+
 export default PricingSection;
