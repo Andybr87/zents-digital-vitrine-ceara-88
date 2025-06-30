@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Check, Star, Sparkles, Gift } from "lucide-react";
+import { Check, Star, Sparkles, Gift, AlertCircle } from "lucide-react";
 
 const PricingSection = () => {
   const plans = [{
@@ -15,7 +15,7 @@ const PricingSection = () => {
     popular: false,
     hasOffer: true,
     offerPrice: "99,90",
-    offerText: "Os 100 primeiros clientes pagam R$ 99,90 nos 3 primeiros meses!"
+    offerText: "Os 100 primeiros clientes pagam R$ 99,90 (50% de desconto)"
   }, {
     name: "Plus",
     price: "349,90",
@@ -23,16 +23,27 @@ const PricingSection = () => {
       "Catálogo com 35 imagens",
       "2 modelos virtuais com escolha de biotipo",
       "Atualização por voz (via WhatsApp)",
-      "Suporte via WhatsApp"
+      "Suporte via WhatsApp",
+      "Acesso a vídeos e tutoriais"
     ],
     popular: true,
-    hasOffer: false
+    hasOffer: true,
+    offerPrice: "174,90",
+    offerText: "Os 100 primeiros clientes pagam R$ 174,90 nos 3 primeiros meses (50% de desconto)"
   }, {
     name: "Premium",
     price: "499,90",
-    features: ["Tudo do Plus +", "Suporte Prioritário", "Personalização Avançada"],
+    features: [
+      "Catálogo com 50 imagens",
+      "4 modelos virtuais personalizados (escolha de biotipo)",
+      "Suporte personalizado (via WhatsApp)",
+      "Atualização por voz (via WhatsApp)",
+      "Acesso a vídeos e tutoriais"
+    ],
     popular: false,
-    hasOffer: false
+    hasOffer: true,
+    offerPrice: "249,90",
+    offerText: "Os 100 primeiros clientes pagam R$ 249,90 nos 3 primeiros meses (50% de desconto)"
   }];
 
   return <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
@@ -48,6 +59,11 @@ const PricingSection = () => {
             <p className="text-xl text-gray-600">
               Tecnologia acessível para todos os tamanhos de negócio 💼
             </p>
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-6 max-w-2xl mx-auto">
+              <p className="text-red-700 font-semibold text-lg">
+                🔥 Oferta de Lançamento: 50% de desconto nos 3 primeiros meses para os primeiros 100 clientes!
+              </p>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -62,7 +78,7 @@ const PricingSection = () => {
                 {plan.hasOffer && <div className="absolute -top-4 right-4">
                     <div className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
                       <Gift className="w-3 h-3" />
-                      Oferta!
+                      50% OFF
                     </div>
                   </div>}
                 
@@ -71,14 +87,14 @@ const PricingSection = () => {
                   
                   {plan.hasOffer ? (
                     <div>
-                      <div className="text-2xl font-bold text-red-500 mb-1">
+                      <div className="text-3xl font-bold text-red-500 mb-1">
                         R$ {plan.offerPrice}
                       </div>
                       <div className="text-lg text-gray-400 line-through mb-2">
                         R$ {plan.price}
                       </div>
                       <p className="text-red-600 text-xs font-semibold mb-2">
-                        Oferta de Lançamento - 3 primeiros meses
+                        Oferta de Lançamento - 50% OFF
                       </p>
                     </div>
                   ) : (
@@ -109,6 +125,18 @@ const PricingSection = () => {
                   Começar agora
                 </Button>
               </div>)}
+          </div>
+
+          {/* Rules Section */}
+          <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 mb-8">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <AlertCircle className="w-5 h-5 text-yellow-600" />
+              <h3 className="text-lg font-semibold text-yellow-800">Regras Importantes</h3>
+            </div>
+            <div className="text-center text-yellow-700">
+              <p className="mb-2">📅 <strong>7 dias de carência</strong> após a assinatura do plano</p>
+              <p>🔒 Bloqueio e desbloqueio mediante regularização do pagamento</p>
+            </div>
           </div>
           
           <div className="bg-gradient-to-r from-zents-purple-50 to-zents-orange-50 rounded-2xl p-8 text-center">
