@@ -1,23 +1,40 @@
+
 import { Button } from "@/components/ui/button";
-import { Check, Star, Sparkles } from "lucide-react";
+import { Check, Star, Sparkles, Gift } from "lucide-react";
 
 const PricingSection = () => {
   const plans = [{
     name: "Básico",
     price: "199,90",
-    features: ["Vitrine Digital", "Atualização por voz", "Suporte WhatsApp"],
-    popular: false
+    features: [
+      "Catálogo Digital com 20 imagens",
+      "Atualização por voz (via WhatsApp)",
+      "Suporte via WhatsApp",
+      "Acesso a vídeos e tutoriais"
+    ],
+    popular: false,
+    hasOffer: true,
+    offerPrice: "99,90",
+    offerText: "Os 100 primeiros clientes pagam R$ 99,90 nos 3 primeiros meses!"
   }, {
     name: "Plus",
     price: "349,90",
-    features: ["Tudo do Básico +", "Mockup automático", "2 usuários simultâneos"],
-    popular: true
+    features: [
+      "Catálogo com 35 imagens",
+      "2 modelos virtuais com escolha de biotipo",
+      "Atualização por voz (via WhatsApp)",
+      "Suporte via WhatsApp"
+    ],
+    popular: true,
+    hasOffer: false
   }, {
     name: "Premium",
     price: "499,90",
     features: ["Tudo do Plus +", "Suporte Prioritário", "Personalização Avançada"],
-    popular: false
+    popular: false,
+    hasOffer: false
   }];
+
   return <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
@@ -41,12 +58,35 @@ const PricingSection = () => {
                       Mais Popular
                     </div>
                   </div>}
+
+                {plan.hasOffer && <div className="absolute -top-4 right-4">
+                    <div className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                      <Gift className="w-3 h-3" />
+                      Oferta!
+                    </div>
+                  </div>}
                 
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-semibold text-gray-800 mb-2">{plan.name}</h3>
-                  <div className="text-4xl font-bold text-zents-purple-600 mb-2">
-                    R$ {plan.price}
-                  </div>
+                  
+                  {plan.hasOffer ? (
+                    <div>
+                      <div className="text-2xl font-bold text-red-500 mb-1">
+                        R$ {plan.offerPrice}
+                      </div>
+                      <div className="text-lg text-gray-400 line-through mb-2">
+                        R$ {plan.price}
+                      </div>
+                      <p className="text-red-600 text-xs font-semibold mb-2">
+                        Oferta de Lançamento - 3 primeiros meses
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="text-4xl font-bold text-zents-purple-600 mb-2">
+                      R$ {plan.price}
+                    </div>
+                  )}
+                  
                   <p className="text-gray-500 text-sm">/mês</p>
                 </div>
                 
@@ -56,6 +96,14 @@ const PricingSection = () => {
                       <span className="text-gray-600">{feature}</span>
                     </li>)}
                 </ul>
+
+                {plan.hasOffer && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-6">
+                    <p className="text-red-700 text-sm font-medium text-center">
+                      {plan.offerText}
+                    </p>
+                  </div>
+                )}
                 
                 <Button className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${plan.popular ? 'bg-zents-orange-500 hover:bg-zents-orange-600 text-white' : 'bg-zents-purple-100 hover:bg-zents-purple-200 text-zents-purple-600'}`}>
                   Começar agora
