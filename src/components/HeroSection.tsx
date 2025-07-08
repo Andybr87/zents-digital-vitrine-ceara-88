@@ -7,12 +7,12 @@ const HeroSection = () => {
           
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            A ZENTS é sua{" "}
+            Zents, sua{" "}
             <span className="bg-gradient-to-r from-zents-purple-600 to-zents-orange-500 bg-clip-text text-transparent">
-              secretária digital
+              loja online
             </span>{" "}
-            da moda.{" "}
-            <span className="text-zents-purple-600">Você fala, ela faz.</span>
+            em minutos com a{" "}
+            <span className="text-zents-purple-600">sua voz.</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
