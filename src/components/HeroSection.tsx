@@ -23,7 +23,7 @@ const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button className="bg-zents-orange-500 hover:bg-zents-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-              Quero minha vitrine digital
+              Quero minha loja online
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             
