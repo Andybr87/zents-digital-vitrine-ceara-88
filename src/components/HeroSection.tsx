@@ -16,9 +16,9 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Catálogo atualizado por voz e imagem. No WhatsApp. 
+            Catálogo atualizado por voz e imagem. Tudo no WhatsApp. 
             <br className="hidden md:block" />
-            Simples, rápido e do seu jeito. 🗣️✨
+            Simples rápido do seu jeito.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
