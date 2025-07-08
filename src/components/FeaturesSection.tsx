@@ -24,7 +24,7 @@ const FeaturesSection = () => {
     {
       icon: <Share2 className="w-8 h-8" />,
       title: "Compartilha fácil",
-      description: "Link nos grupos, feiras e WhatsApp.",
+      description: "Link nos grupos de WhatsApp, Feiras, Instagram, Facebook e TikTok.",
       color: "zents-orange"
     },
     {
