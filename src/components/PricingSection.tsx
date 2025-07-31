@@ -20,7 +20,7 @@ const PricingSection = () => {
     name: "Plus",
     price: "349,90",
     features: [
-      "Catálogo Digital com 35 imagens",
+      "Catálogo com 35 imagens",
       "2 modelos virtuais com escolha de biotipo",
       "Atualização por voz (via WhatsApp)",
       "Suporte via WhatsApp",
@@ -34,7 +34,7 @@ const PricingSection = () => {
     name: "Premium",
     price: "499,90",
     features: [
-      "Catálogo Digital com 50 imagens",
+      "Catálogo com 50 imagens",
       "4 modelos virtuais personalizados (escolha de biotipo)",
       "Suporte personalizado (via WhatsApp)",
       "Atualização por voz (via WhatsApp)",
