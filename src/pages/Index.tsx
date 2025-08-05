@@ -12,7 +12,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-white via-zents-purple-50 to-zents-orange-50">
       <Header />
       <HeroSection />
       <HowItWorksSection />
